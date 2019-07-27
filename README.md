@@ -10,7 +10,7 @@ The image is based on alpine Linux.
 
 Versions in the latest image
 -----
-- [SABnzbd](https://sabnzbd.org "SABnzbd Homepage") Version: 2.3.9
+- [SABnzbd](https://sabnzbd.org "SABnzbd Project Homepage") Version: 2.3.9
 - PAR2 from [par2cmdline](https://github.com/Parchive/par2cmdline) Version: 0.8.0
 
 Start your container
