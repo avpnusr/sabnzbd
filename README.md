@@ -26,4 +26,4 @@ docker run -d \
   -e UID=[Users UID] \
   -e GID=[Users GID] \
   -p 8080:8080 \
-  --restart=unless-stopped avpnusr/sabnzbd:latest
+  --restart=unless-stopped avpnusr/sabnzbd
