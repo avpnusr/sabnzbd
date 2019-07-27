@@ -5,7 +5,6 @@
 ===
 
 Image is automatically updated, when a new version of SABnzbd arrives on GitHub. 
-
 The image is based on alpine Linux.
 
 Versions in the latest image
