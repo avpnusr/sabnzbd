@@ -1,6 +1,6 @@
 ![SABnzbd Logo](https://www.usenet.com/wp-content/uploads/2017/05/Screenshot_2-1.png)
 
-**SABnzbd in container for multiarch support (AMD64/ARM)**
+**SABnzbd in container with multiarch support (AMD64/ARM)**
 ===
 
 Image is automatically updated, when a new version of SABnzbd arrives on GitHub. 
