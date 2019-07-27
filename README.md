@@ -16,7 +16,7 @@ Versions in the latest image
 Start your container
 -----
 - For **[/config/location]**, use the folder, where your **sabnzbd.ini** file is stored.
-- For **[/complete/folder]**, you can use the folder, where your completed downloads will be stored.
+- For **[/complete/folder]**, use the folder, where your completed downloads will be stored.
 - For **[/incomplete/folder]**, use the folder, where the temporary files will be stored, until download is finished.
 
 ````
