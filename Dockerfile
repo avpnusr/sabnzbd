@@ -5,10 +5,8 @@ ARG GITTAG=2.3.9
 
 COPY ./requirements.txt ./start.sh /
 
-RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-dev libffi-dev musl-dev tzdata" \
+RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-dev libffi-dev musl-dev" \
   && apk --update --no-cache add $buildDeps \
-  && cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime \
-  && echo "Europe/Berlin" > /etc/timezone \
   && apk --no-cache add \
     python \
     py2-pip py2-openssl \
