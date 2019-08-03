@@ -3,7 +3,7 @@ MAINTAINER avpnusr
 ARG PAR2TAG=v0.8.0
 ARG GITTAG=2.3.9
 
-COPY ./requirements.txt ./start.sh /
+COPY ./requirements.txt /
 
 RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-dev libffi-dev musl-dev" \
   && apk --update --no-cache add $buildDeps \
@@ -31,7 +31,6 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
 && cd /sabnzbd \
 && python tools/make_mo.py \
 && cd / \
-&& chmod +x /start.sh \
 && rm -rf /yenc \
 && apk del $buildDeps \
 && rm -rf \
@@ -44,10 +43,8 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
 EXPOSE 8080
 
 HEALTHCHECK --interval=120s --timeout=15s --start-period=120s --retries=3 \
-            CMD wget --no-check-certificate --quiet --spider 'http://localhost:8080' || exit 1
+            CMD wget --no-check-certificate --quiet --spider 'http://localhost:8080' && echo "Everything is fine..." || exit 1
 
 VOLUME ["/config", "/complete", "/incomplete"]
 
-WORKDIR /sabnzbd
-
-CMD ["/start.sh"]
+ENTRYPOINT [ "/usr/bin/python", "/sabnzbd/SABnzbd.py", "-f", "/config/sabnzbd.ini", "-b", "0", "-s", "0.0.0.0:8080" ]
