@@ -4,7 +4,8 @@
 
 ===
 
-Image is automatically updated, when a new version of SABnzbd arrives on GitHub. 
+Image is automatically updated, when a new version of SABnzbd arrives on GitHub.   
+Supported architectures are amd64, arm64, arm.
 
 The container is lightweight and based on alpine Linux.
 
