@@ -1,6 +1,7 @@
 FROM alpine:latest
 MAINTAINER avpnusr
 ARG PAR2TAG=v0.8.0
+ARG GITTAG=2.3.9
 
 COPY ./requirements.txt /
 
@@ -26,7 +27,7 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
 && make install \
 && cd / \
 && rm -rf par2cmdline \
-&& git clone https://github.com/sabnzbd/sabnzbd.git \
+&& git clone --depth 1 --branch ${GITTAG} https://github.com/sabnzbd/sabnzbd.git \
 && cd /sabnzbd \
 && python tools/make_mo.py \
 && cd / \
