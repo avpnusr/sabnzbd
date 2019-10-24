@@ -1,13 +1,12 @@
 ![SABnzbd Logo](https://www.usenet.com/wp-content/uploads/2017/05/Screenshot_2-1.png)
 
 **SABnzbd in container with multiarch support**
-
 ===
 
 Image is automatically updated, when a new version of SABnzbd arrives on GitHub.   
 Supported architectures are amd64, arm64, arm.
 
-The container is lightweight and based on alpine Linux.
+The container is lightweight and based on alpine linux.
 
 Versions in the latest image
 -----
@@ -25,7 +24,6 @@ docker run -d \
   -v [/config/location]:/config \
   -v [/complete/folder]:/complete \
   -v [/incomplete/folder]:/incomplete \
-  -e UID=[Users UID] \
-  -e GID=[Users GID] \
   -p 8080:8080 \
+  --user=[UID:GID] \
   --restart=unless-stopped avpnusr/sabnzbd

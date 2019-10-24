@@ -43,7 +43,7 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
 EXPOSE 8080
 
 HEALTHCHECK --interval=120s --timeout=15s --start-period=120s --retries=3 \
-            CMD wget --no-check-certificate --quiet --spider 'http://localhost:8080' && echo "Everything is fine..." || exit 1
+            CMD wget --no-check-certificate --quiet --spider 'http://localhost:8080' && echo "Healthcheck successful." || exit 1
 
 VOLUME ["/config", "/complete", "/incomplete"]
 
