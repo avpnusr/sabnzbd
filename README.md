@@ -8,6 +8,8 @@ Supported architectures are amd64, arm64, arm.
 
 The container is lightweight and based on alpine linux.
 
+You can find the weekly dev-build from SABnzbd in this **[container](https://hub.docker.com/r/avpnusr/sabnzbd-dev)**
+
 Versions in the latest image
 -----
 - [SABnzbd](https://sabnzbd.org "SABnzbd Project Homepage") Version: 2.3.9
