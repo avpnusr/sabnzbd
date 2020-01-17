@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.10
 MAINTAINER avpnusr
 ARG PAR2TAG=v0.8.0
 ARG GITTAG=2.3.9
