@@ -3,6 +3,9 @@
 **SABnzbd in container with multiarch support**
 ===
 
+**Important:** Python 2 is not supported anymore, so an old version of alpine linux (3.10) has to be used for this      
+container.  Please check, if using the SABnzbd container, using Python 3 is working for you! **[LINK](https://hub.docker.com/r/avpnusr/sabnzbd-dev)**
+
 Image is automatically updated, when a new version of SABnzbd arrives on GitHub.   
 Supported architectures are amd64, arm64, arm.
 
