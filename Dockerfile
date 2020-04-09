@@ -1,6 +1,6 @@
 FROM alpine:3.10
 MAINTAINER avpnusr
-ARG PAR2TAG=v0.8.0
+ARG PAR2TAG=v0.8.1
 ARG GITTAG=2.3.9
 
 COPY ./requirements.txt /
