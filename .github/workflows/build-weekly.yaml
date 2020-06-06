@@ -1,4 +1,4 @@
-name: Check TOR-Version in APK Repo
+name: Weekly SABnzbd Build
 
 on:
   schedule:
