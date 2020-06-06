@@ -2,7 +2,7 @@ name: Check TOR-Version in APK Repo
 
 on:
   schedule:
-    -cron: '23 5 5 * *'
+    - cron: '23 5 5 * *'
     
 jobs:
 
