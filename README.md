@@ -9,6 +9,10 @@ container.  Please check, if using the SABnzbd container, using Python 3 is work
 Image is automatically updated, when a new version of SABnzbd arrives on GitHub.   
 Supported architectures are amd64, arm64, arm.
 
+Status from last build
+-----
+![SABnzbd Docker Build](https://github.com/avpnusr/sabnzbd/workflows/SABnzbd%20Docker%20Build/badge.svg)
+
 The container is lightweight and based on alpine linux.
 
 You can find the weekly dev-build from SABnzbd in this **[container](https://hub.docker.com/r/avpnusr/sabnzbd-dev)**
