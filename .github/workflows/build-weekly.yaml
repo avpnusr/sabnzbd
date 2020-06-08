@@ -2,7 +2,7 @@ name: SABnzbd Docker Build
 
 on:
   schedule:
-    - cron: '23 5 5 * *'
+    - cron: '23 5 * * 5'
   push:
      branches: 
       - master
