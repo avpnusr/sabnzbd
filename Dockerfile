@@ -38,7 +38,13 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
     /par2cmdline \
     /requirements.txt \
     /sabnzbd/.git \
-    /tmp/*
+    /tmp/* \
+&& addgroup -S sabnzbd \
+&& adduser -S sabnzbd -G sabnzbd \
+&& mkdir /config /complete /incomplete \
+&& chown sabnzbd:sabnzbd /config /complete /incomplete
+
+USER sabnzbd
 
 EXPOSE 8080
 
