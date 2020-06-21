@@ -1,5 +1,5 @@
 FROM alpine:3.10
-MAINTAINER avpnusr
+LABEL maintainer="avpnusr"
 ARG PAR2TAG=v0.8.1
 ARG GITTAG=2.3.9
 
@@ -30,6 +30,8 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python-dev openssl-d
 && git clone --depth 1 --branch ${GITTAG} https://github.com/sabnzbd/sabnzbd.git \
 && cd /sabnzbd \
 && python tools/make_mo.py \
+&& sed -i "/DEF_COMPLETE_DIR/c\DEF_COMPLETE_DIR = os.path.normpath(\"/complete\")" /sabnzbd/sabnzbd/constants.py \
+&& sed -i "/DEF_DOWNLOAD_DIR/c\DEF_DOWNLOAD_DIR = os.path.normpath(\"/incomplete\")" /sabnzbd/sabnzbd/constants.py \
 && cd / \
 && rm -rf /yenc \
 && apk del $buildDeps \
