@@ -3,7 +3,7 @@
 **SABnzbd in container with multiarch support**
 ===
 
-**Important:** Updated to new Version 3.0.0, including Python 3.5 
+**Important:** Updated to new Version 3.0.1, including Python 3.5 
 
 Image is automatically updated, when a new version of SABnzbd arrives on GitHub.   
 Supported architectures are amd64, arm64, arm.
