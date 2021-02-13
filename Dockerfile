@@ -3,11 +3,11 @@ LABEL maintainer="avpnusr"
 ARG PAR2TAG=v0.8.1
 ARG SABTAG=3.1.1
 
-RUN buildDeps="gcc g++ git mercurial make automake autoconf python3-dev openssl-dev libffi-dev musl-dev rust cargo" \
+RUN buildDeps="gcc g++ git mercurial make automake autoconf python3-dev openssl-dev libffi-dev musl-dev" \
   && apk --update --no-cache add $buildDeps \
   && apk --no-cache add \
     python3 \
-    py3-pip py3-openssl \
+    py3-pip py3-openssl py3-cryptography py3-wheel \
     ffmpeg-libs \
     ffmpeg \
     unrar \
@@ -17,7 +17,8 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python3-dev openssl-
     libgomp \
 && python3 -m pip install --upgrade pip --no-cache-dir \
 && git clone --branch ${SABTAG} https://github.com/sabnzbd/sabnzbd.git \
-&& python3 -m pip install -r /sabnzbd/requirements.txt --upgrade --no-cache-dir \
+&& cat /sabnzbd/requirements.txt | grep -v cryptography > /sabnzbd/requirements_nocrypto.txt \
+&& python3 -m pip install -r /sabnzbd/requirements_nocrypto.txt --upgrade --no-cache-dir \
 && git clone --depth 1 --branch ${PAR2TAG} https://github.com/Parchive/par2cmdline.git \
 && cd /par2cmdline \
 && sh automake.sh \
