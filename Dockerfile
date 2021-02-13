@@ -3,7 +3,7 @@ LABEL maintainer="avpnusr"
 ARG PAR2TAG=v0.8.1
 ARG SABTAG=3.1.1
 
-RUN buildDeps="gcc g++ git mercurial make automake autoconf python3-dev openssl-dev libffi-dev musl-dev" \
+RUN buildDeps="gcc g++ git mercurial make automake autoconf python3-dev openssl-dev libffi-dev musl-dev rust cargo" \
   && apk --update --no-cache add $buildDeps \
   && apk --no-cache add \
     python3 \
