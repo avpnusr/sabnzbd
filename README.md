@@ -16,7 +16,7 @@ You can find the weekly dev-build from SABnzbd in this **[container](https://hub
 
 Versions in the latest image
 -----
-- [SABnzbd](https://sabnzbd.org "SABnzbd Project Homepage") Version: 3.2.0
+- [SABnzbd](https://sabnzbd.org "SABnzbd Project Homepage") Version: 3.2.1
 - PAR2 from [par2cmdline](https://github.com/Parchive/par2cmdline) Version: 0.8.1
 
 Start your container
