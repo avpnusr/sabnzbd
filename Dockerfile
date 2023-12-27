@@ -19,9 +19,11 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python3-dev openssl-
 && git clone --branch ${SABTAG} https://github.com/sabnzbd/sabnzbd.git \
 && cat /sabnzbd/requirements.txt | grep -v cryptography > /sabnzbd/requirements_nocrypto.txt \
 && python3 -m pip install -r /sabnzbd/requirements_nocrypto.txt --upgrade --no-cache-dir --ignore-installed six \
-&& git clone --depth 1 --branch ${PAR2TAG} https://github.com/Parchive/par2cmdline.git \
-&& cd /par2cmdline \
-&& sh automake.sh \
+&& git clone https://github.com/animetosho/par2cmdline-turbo.git \
+&& cd /par2cmdline-turbo \
+&& aclocal \
+&& automake --add-missing \
+&& autoconf \
 && ./configure \
 && make \
 && make install \
