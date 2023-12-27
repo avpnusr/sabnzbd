@@ -28,7 +28,7 @@ RUN buildDeps="gcc g++ git mercurial make automake autoconf python3-dev openssl-
 && make \
 && make install \
 && cd / \
-&& rm -rf par2cmdline \
+&& rm -rf par2cmdline-turbo \
 && cd /sabnzbd \
 && python3 tools/make_mo.py \
 # Changing default constants for matching complete / incomplete volume in this container, if you start from default config
