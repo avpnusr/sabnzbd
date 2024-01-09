@@ -1,7 +1,7 @@
 FROM alpine:3.12
 LABEL maintainer="avpnusr"
 ARG PAR2TAG=v0.8.1
-ARG SABTAG=4.2.0
+ARG SABTAG=4.2.1
 
 RUN buildDeps="gcc g++ git mercurial make automake autoconf python3-dev openssl-dev libffi-dev musl-dev" \
   && apk --update --no-cache add $buildDeps \
