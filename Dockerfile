@@ -1,6 +1,6 @@
 FROM alpine:3.14
 LABEL maintainer="avpnusr"
-ARG SABTAG=4.4.0
+ARG SABTAG=4.4.1
 
 RUN buildDeps="gcc g++ git mercurial make automake autoconf python3-dev openssl-dev libffi-dev musl-dev" \
   && apk --update --no-cache add $buildDeps \
