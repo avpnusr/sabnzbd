@@ -8,7 +8,7 @@ Supported platforms are amd64, arm64, armv7 and armv6
 
 Status from last build
 -----
-![SABnzbd Docker Build](https://github.com/avpnusr/sabnzbd/workflows/SABnzbd%20Docker%20Build/badge.svg)
+![SABnzbd Docker Build](https://github.com/avpnusr/sabnzbd/workflows/build/badge.svg)
 
 The container is lightweight and based on alpine linux.
 
