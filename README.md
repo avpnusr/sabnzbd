@@ -4,7 +4,7 @@
 ===
 
 Image is automatically updated, when a new version of SABnzbd arrives on GitHub.   
-Supported architectures are amd64, arm64, arm.
+Supported platforms are amd64, arm64, armv7 and armv6
 
 Status from last build
 -----
@@ -16,8 +16,8 @@ You can find the weekly dev-build from SABnzbd in this **[container](https://hub
 
 Versions in the latest image
 -----
-- [SABnzbd](https://github.com/sabnzbd/sabnzbd "SABnzbd Project Homepage") Version: 4.0.1
-- PAR2 from [par2cmdline](https://github.com/Parchive/par2cmdline) Version: 0.8.1
+- [SABnzbd](https://github.com/sabnzbd/sabnzbd "SABnzbd Project Homepage") version: 4.5.2
+- par2cmdturbo from [par2cmdturbo](https://github.com/animetosho/par2cmdline-turbo) version: 1.3.0
 
 Start your container
 -----
@@ -32,4 +32,4 @@ docker run -d \
   -v [/incomplete/folder]:/incomplete \
   -p 8080:8080 \
   --user=[UID:GID] \
-  --restart=unless-stopped avpnusr/sabnzbd
+  --restart=unless-stopped ghcr.io/avpnusr/sabnzbd:latest
