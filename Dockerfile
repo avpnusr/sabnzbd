@@ -27,8 +27,8 @@ RUN CPUARCH=${TARGETARCH}${TARGETVARIANT} \
 && pip config set global.break-system-packages true \
 && pip install -U --no-cache-dir pip wheel \
 && git clone --branch ${SABTAG} https://github.com/sabnzbd/sabnzbd.git \
-&& sed -i '1 i\--find-links https://github.com/code-gore/pywheels/releases/tag/'"${SABTAG}"'' /sabnzbd/requirements.txt \
-&& pip install -U --no-cache-dir --find-links https://github.com/code-gore/pywheels/releases/tag/${SABTAG} -r /sabnzbd/requirements.txt \
+&& sed -i '1 i\--find-links https://pypi.gkkh.de/sabnzbd/' /sabnzbd/requirements.txt \
+&& pip install -U --no-cache-dir --find-links https://pypi.gkkh.de/sabnzbd/ -r /sabnzbd/requirements.txt \
 && cd /sabnzbd \
 && python3 tools/make_mo.py \
 && cd / \
