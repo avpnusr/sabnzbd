@@ -4,8 +4,6 @@ ARG TARGETARCH TARGETVARIANT SABTAG=4.5.2
 
 RUN CPUARCH=${TARGETARCH}${TARGETVARIANT} \
 && if [ $CPUARCH == "armv6" ]; then export QEMU_CPU="arm1176"; fi \
-&& OSARCH=$(uname -m) \
-&& echo "## Architecture: ${CPUARCH} // ## OSARCH: ${OSARCH}" \
 && apk add -U --update --no-cache --virtual=build-dependencies \
   libffi-dev \
   openssl-dev \
@@ -30,7 +28,7 @@ RUN CPUARCH=${TARGETARCH}${TARGETVARIANT} \
 && pip install -U --no-cache-dir pip wheel \
 && git clone --branch ${SABTAG} https://github.com/sabnzbd/sabnzbd.git \
 && sed -i '1 i\--find-links https://pypi.gkkh.de/' /sabnzbd/requirements.txt \
-&& pip install -U --no-cache-dir --find-links https://pypi.gkkh.de/ -r /sabnzbd/requirements.txt \
+&& pip install -U --no-cache-dir --find-links https://github.com/code-gore/pywheels/releases/tag/${SABTAG} -r /sabnzbd/requirements.txt \
 && cd /sabnzbd \
 && python3 tools/make_mo.py \
 && cd / \
