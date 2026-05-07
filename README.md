@@ -16,8 +16,8 @@ You can find the weekly dev-build from SABnzbd in this **[container](https://hub
 
 Versions in the latest image
 -----
-- [SABnzbd](https://github.com/sabnzbd/sabnzbd "SABnzbd Project Homepage") version: 4.5.4
-- par2cmdturbo from [par2cmdturbo](https://github.com/animetosho/par2cmdline-turbo) version: 1.3.0
+- [SABnzbd](https://github.com/sabnzbd/sabnzbd "SABnzbd Project Homepage") version: 5.0.1
+- par2cmdturbo from [par2cmdturbo](https://github.com/animetosho/par2cmdline-turbo) version: 1.4.0
 
 Start your container
 -----
