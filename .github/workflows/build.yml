@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: | 
-          echo "BDATE=$(date +%d-%m-%Y)" >> $GITHUB_ENV 
+          echo "SABVER=$(curl -s https://api.github.com/repos/sabnzbd/sabnzbd/releases/latest | sed -n 's/.*"tag_name": "\(.*\)",/\1/p')" >> $GITHUB_ENV
+
       -
         name: Checkout
         uses: actions/checkout@v6
@@ -45,6 +46,6 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.actor }}/sabnzbd:latest
-            ghcr.io/${{ github.actor }}/sabnzbd:${{ env.BDATE }}
+            ghcr.io/${{ github.actor }}/sabnzbd:${{ env.SABVER }}
             avpnusr/sabnzbd:latest
-            avpnusr/sabnzbd:${{ env.BDATE }}
+            avpnusr/sabnzbd:${{ env.SABVER }}
