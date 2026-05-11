@@ -29,8 +29,8 @@ RUN CPUARCH=${TARGETARCH}${TARGETVARIANT} \
 # && git clone --branch ${SABTAG} https://github.com/sabnzbd/sabnzbd.git \
 && curl -L https://github.com/sabnzbd/sabnzbd/archive/refs/tags/${SABTAG}.tar.gz | tar -xz \
 && mv sabnzbd-${SABTAG} sabnzbd \
-&& sed -i '1 i\--find-links https://pypi.gkkh.de/sabnzbd/' /sabnzbd/requirements.txt \
-&& pip install -U --no-cache-dir --find-links https://pypi.gkkh.de/sabnzbd/ -r /sabnzbd/requirements.txt \
+# && sed -i '1 i\--find-links https://pypi.gkkh.de/sabnzbd/' /sabnzbd/requirements.txt \
+&& pip install -U --no-cache-dir --extra-index-url https://pypi.gkkh.de/sabnzbd/ --only-binary=:all: -r /sabnzbd/requirements.txt \
 && cd /sabnzbd \
 && python3 tools/make_mo.py \
 && cd / \
