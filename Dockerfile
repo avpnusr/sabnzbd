@@ -26,7 +26,9 @@ RUN CPUARCH=${TARGETARCH}${TARGETVARIANT} \
 && chmod 0755 /usr/local/bin/unrar \
 && pip config set global.break-system-packages true \
 && pip install -U --no-cache-dir pip wheel \
-&& git clone --branch ${SABTAG} https://github.com/sabnzbd/sabnzbd.git \
+# && git clone --branch ${SABTAG} https://github.com/sabnzbd/sabnzbd.git \
+&& curl -L https://github.com/sabnzbd/sabnzbd/archive/refs/tags/${SABTAG}.tar.gz | tar -xz \
+&& mv sabnzbd-${SABTAG} sabnzbd \
 && sed -i '1 i\--find-links https://pypi.gkkh.de/sabnzbd/' /sabnzbd/requirements.txt \
 && pip install -U --no-cache-dir --find-links https://pypi.gkkh.de/sabnzbd/ -r /sabnzbd/requirements.txt \
 && cd /sabnzbd \
