@@ -1,6 +1,6 @@
 FROM alpine:3.23
 LABEL maintainer="avpnusr"
-ARG TARGETARCH TARGETVARIANT SABTAG=5.0.1
+ARG TARGETARCH TARGETVARIANT SABTAG=5.0.2
 
 RUN CPUARCH=${TARGETARCH}${TARGETVARIANT} \
 && if [ $CPUARCH == "armv6" ]; then export QEMU_CPU="arm1176"; fi \
@@ -25,7 +25,7 @@ RUN CPUARCH=${TARGETARCH}${TARGETVARIANT} \
 && curl -sL $UNRARURL -o /usr/local/bin/unrar \
 && chmod 0755 /usr/local/bin/unrar \
 && pip config set global.break-system-packages true \
-&& pip install -U --no-cache-dir pip wheel \
+&& pip install -U --no-cache-dir --extra-index-url https://pypi.gkkh.de/sabnzbd/ pip wheel \
 # && git clone --branch ${SABTAG} https://github.com/sabnzbd/sabnzbd.git \
 && curl -L https://github.com/sabnzbd/sabnzbd/archive/refs/tags/${SABTAG}.tar.gz | tar -xz \
 && mv sabnzbd-${SABTAG} sabnzbd \
