@@ -45,7 +45,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.actor }}/sabnzbd:latest
             ghcr.io/${{ github.actor }}/sabnzbd:${{ env.SABVER }}
+            ghcr.io/${{ github.actor }}/sabnzbd:latest
             avpnusr/sabnzbd:latest
             avpnusr/sabnzbd:${{ env.SABVER }}
