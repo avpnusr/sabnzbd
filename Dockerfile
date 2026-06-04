@@ -21,21 +21,17 @@ RUN CPUARCH=${TARGETARCH}${TARGETVARIANT} \
     libstdc++ \
     libgcc \
     libc6-compat \
-&& UNRARURL=$(curl -sL "https://api.github.com/repos/avpnusr/unrar-alpine/releases/latest" | grep -B1 ${TARGETARCH}${TARGETVARIANT} | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*") \
-&& curl -sL $UNRARURL -o /usr/local/bin/unrar \
+&& curl -fsSL https://github.com/avpnusr/unrar-alpine/releases/latest/download/unrar_${CPUARCH} -o /usr/local/bin/unrar \
 && chmod 0755 /usr/local/bin/unrar \
 && pip config set global.break-system-packages true \
 && pip install -U --no-cache-dir --extra-index-url https://pypi.gkkh.de/sabnzbd/ pip wheel \
-# && git clone --branch ${SABTAG} https://github.com/sabnzbd/sabnzbd.git \
-&& curl -L https://github.com/sabnzbd/sabnzbd/archive/refs/tags/${SABTAG}.tar.gz | tar -xz \
+&& curl -fsSL https://github.com/sabnzbd/sabnzbd/archive/refs/tags/${SABTAG}.tar.gz | tar -xz \
 && mv sabnzbd-${SABTAG} sabnzbd \
-# && sed -i '1 i\--find-links https://pypi.gkkh.de/sabnzbd/' /sabnzbd/requirements.txt \
-&& pip install -U --no-cache-dir --extra-index-url https://pypi.gkkh.de/sabnzbd/ --only-binary=:all: -r /sabnzbd/requirements.txt \
+&& pip install -U --no-cache-dir --extra-index-url https://git.khmls.net/api/packages/pypi/pypi/simple/ --only-binary=:all: -r /sabnzbd/requirements.txt \
 && cd /sabnzbd \
 && python3 tools/make_mo.py \
 && cd / \
-&& PAR2URL=$(curl -sL "https://api.github.com/repos/avpnusr/par2cmdturbo-build/releases/latest" | grep -B1 ${TARGETARCH}${TARGETVARIANT} | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*") \
-&& curl -sL $PAR2URL -o /usr/local/bin/par2 \
+&& curl -fsSL https://github.com/avpnusr/par2cmdturbo-build/releases/latest/download/par2_${CPUARCH} -o /usr/local/bin/par2 \
 && chmod 0755 /usr/local/bin/par2 \
 && ln -s /usr/local/bin/par2 /usr/local/bin/par2create \
 && ln -s /usr/local/bin/par2 /usr/local/bin/par2repair \

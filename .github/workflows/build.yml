@@ -12,7 +12,6 @@ jobs:
     steps:
       - run: | 
           echo "SABVER=$(curl -s https://api.github.com/repos/sabnzbd/sabnzbd/releases/latest | sed -n 's/.*"tag_name": "\(.*\)",/\1/p')" >> $GITHUB_ENV
-
       -
         name: Checkout
         uses: actions/checkout@v6
@@ -34,6 +33,11 @@ jobs:
         uses: docker/setup-qemu-action@v4
         with:
           cache-image: false
+      -
+        name: Set up WireGuard Connection
+        uses: niklaskeerl/easy-wireguard-action@v2
+        with:
+          WG_CONFIG_FILE: ${{ secrets.WG_CONFIG_FILE }}
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
