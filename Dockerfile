@@ -24,7 +24,7 @@ RUN CPUARCH=${TARGETARCH}${TARGETVARIANT} \
 && curl -fsSL https://github.com/avpnusr/unrar-alpine/releases/latest/download/unrar_${CPUARCH} -o /usr/local/bin/unrar \
 && chmod 0755 /usr/local/bin/unrar \
 && pip config set global.break-system-packages true \
-&& pip install -U --no-cache-dir --extra-index-url https://pypi.gkkh.de/sabnzbd/ pip wheel \
+&& pip install -U --no-cache-dir --extra-index-url https://git.khmls.net/api/packages/pypi/pypi/simple/ pip wheel \
 && curl -fsSL https://github.com/sabnzbd/sabnzbd/archive/refs/tags/${SABTAG}.tar.gz | tar -xz \
 && mv sabnzbd-${SABTAG} sabnzbd \
 && pip install -U --no-cache-dir --extra-index-url https://git.khmls.net/api/packages/pypi/pypi/simple/ --only-binary=:all: -r /sabnzbd/requirements.txt \
