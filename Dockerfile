@@ -1,4 +1,4 @@
-FROM alpine:3.23
+FROM alpine:3.24
 LABEL maintainer="avpnusr"
 ARG TARGETARCH TARGETVARIANT SABTAG=5.1.1
 
